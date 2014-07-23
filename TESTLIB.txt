@@ -1,0 +1,749 @@
+3.1 Introducting the Test Environment
+3.1.1 Introduction
+3.1.2 User Interface Validation
+3.1.2.1 Display Review
+3.1.2.2 User Actions
+3.1.3 Process Starter
+3.1.3.1 Start the Process
+3.1.3.2 Process Options
+3.2 Interface to EMP/SCADA Systems
+3.2.1 Basic Transfer of Data
+3.2.2 Transfer of Controls
+3.2.3 Reporting data changes to EMP
+3.2.3.1 Status Point Processing
+3.2.3.1.1 Status Point Alarm
+3.2.3.1.2 Commanded Trip
+3.2.3.1.3 Uncommanded Close
+3.2.3.1.4 Uncommanded Trip
+3.2.3.1.5 Commanded Close
+3.2.3.1.6 Uncommanded Reclosure
+3.2.3.1.7 Uncommanded failed reclosure
+3.2.3.1.8 Other Uncommanded Momentary Changes
+3.2.3.1.9 Acknowledge Status Point Alarm
+3.2.3.2 3-State Status Point Processing
+3.2.3.2.1 Uncommanded Operation
+3.2.3.2.2 Commanded Operation
+3.2.4 Uninitialized Data
+4.1 Introduction
+4.10 OPC DA Client Application
+4.11 PLC Reader
+4.11.1 ModbusReader With DataSet Support
+4.12 TrueTime Reader
+4.13 Interfaces to External Systems
+4.13.1 ISD
+4.13.1.1 ISD Dynamic Removals from the Download Table
+4.13.1.2 ISD Dynamic Additions to the Download Table
+4.13.2 ADO2SMP
+4.13.2.1 Verify the read/write capabilities of ADO2SMP
+4.13.2.2 Verify that the “Connect SCADA” check box is functional
+4.13.2.3 Verify Debug Output and creation of log file
+4.13.3 DDEML2SMP
+4.13.4 MB2SMP
+4.13.5 OPC DA Server
+4.13.5.1 Preparation
+4.13.5.1.1 Third party OPC Client
+4.13.5.1.2 OBSOLETE - Process Viewer for OPC Server application
+4.13.5.1.3 Server PC access and security policies
+4.13.5.1.4 Client PC access and security policies
+4.13.5.1.5 Configuration Database
+4.13.5.2 Functional Test
+4.13.5.2.1 Server Object – Connection with OPC Server
+4.13.5.2.10 OPC Item – Read/Write
+4.13.5.2.2 Server Object – OPC Server interfaces
+4.13.5.2.3 Server Object – OPC Server properties
+4.13.5.2.4 Server Object – Adding new OPC group for existing connection
+4.13.5.2.5 OPC Group Object – OPC Group Interfaces
+4.13.5.2.6 OPC Group Object – OPC Group properties
+4.13.5.2.7 Browsing Server’s Address Space
+4.13.5.2.8 OPC Item – Adding New Item
+4.13.5.2.9 OPC Item – OPC Item Properties
+4.13.5.3 OBSOLETE - Performance Test
+4.13.5.4 OPC Server Log Functionality
+4.13.5.4.1 Configuration of the Log file Path in the Configuration dialog of OPC Server
+4.13.5.4.2 Configuration of the Log file size in the Configuration dialog of OPC Server.
+4.13.5.4.3 Persisting the configuration file name in configuration dialog.
+4.13.5.4.4 Persisting the DataSource name in configuration dialog.
+4.13.5.4.5 Persisting the Minimum Update Rate in configuration dialog.
+4.13.5.4.6 Generating new log file when file size exceeds the size mentioned in the configuration dialog.
+4.13.5.5 Other Tests
+4.13.6 PI2SMP
+4.13.7 SMP/ICCP
+4.13.8 XX2SMP
+4.13.8.1 Common Functionality
+4.13.8.2 DNP3 Protocol
+4.13.8.3 LG8979 Protocol
+4.13.9 61850 Interface Testing
+4.13.9.1 Overview
+4.13.9.2 Setup
+4.13.9.2.2 Equipment Simulator
+4.13.9.3 Configuration (IEC61850Config) Detailed Tests
+4.13.9.3.1 IEC61850Config
+4.13.9.3.2 Manual modification of the obtained device model
+4.13.9.4 IEC61850 Client Application (IEC61850Client) Detailed Tests
+4.13.9.4.1 IEC61850Client Application startup
+4.13.9.4.10 Accumulator Data Type Test using the Equipment Simulator
+4.13.9.4.11 Status Data Type Test using the Equipment Simulator
+4.13.9.4.12 Status Data Type Test using the c264
+4.13.9.4.13 Non-SCADA data Types Test
+4.13.9.4.14 Automatic enabling of enabled RCBs when an association is established
+4.13.9.4.15 Automatic enabling of periodic monitoring of brick when an association is established for non-RCB bricks.
+4.13.9.4.18 SBO Controls
+4.13.9.4.19 Direct Controls using the Equipment Simulator
+4.13.9.4.2 Initial association establishment on IEC61850Client application startup
+4.13.9.4.20 Direct Controls using the c264 device
+4.13.9.4.21 SBO Setpoint
+4.13.9.4.22 Direct Setpoint
+4.13.9.4.3 Controlling association establishment from the SCADA application.
+4.13.9.4.4 Controlling association establishment from the IEC61850Client application.
+4.13.9.4.5 Detecting device failure and automatic re-establishment of the association when the device is restored.
+4.13.9.4.6 Detecting PACiS Agency server failure
+4.13.9.4.7 Associations with multiple IEC61850 devices simultaneously
+4.13.9.4.8 Analog Data Type Test using Equipment Simulator
+4.13.9.4.9 Analog Data Type Test using C264 device
+4.14 Open-Ended Redundant Path
+4.14.1 Modeling
+4.14.1.1 Modeling Through Scada Server UI
+4.14.1.1.1 Modeling a DataSetType
+4.14.1.1.2 Modeling Redundant DataSet
+4.14.1.1.3 Copy and Paste a DataSetType
+4.14.1.1.4 Copy and Paste a DataSet
+4.14.1.2 Exporting the Model
+4.14.1.2.1 OBSOLETE - SDBTXT Export
+4.14.1.2.2 XML Export
+4.14.1.3 Importing the Model
+4.14.1.3.1 OBSOLETE - SDBTXT Import
+4.14.1.3.2 XML Import
+4.14.2 State Measurement Management
+4.14.2.1 Construction of State Measurements for Redundant DataSets
+4.14.2.2 Destruction of State Measurements for Redundant DataSets
+4.14.3 DataSet State Changes and Path Switching
+4.14.3.1 Removal/Restoral Commands
+4.14.3.1.1 Removal/Restoral using The CFE Communications Status WebFG display
+4.14.3.1.2 Removal/Restoral using RTUState
+4.14.3.1.3 DataItems Linked to State Measurements
+4.14.3.1.4 ISD Psuedo-Controls
+4.14.3.2 DataSet Transitions to Failed
+4.14.3.2.1 Exceeding Maximum Error Counts
+4.14.3.2.2 State Reporting Through ScadaDevice Control (ReportDataSetState)
+4.14.3.2.3 Disconnection of DataSources
+4.14.3.2.4 Continual Failures
+4.14.3.3 DataSet Transitions to Online
+4.14.3.3.1 Loading DataItem values of Good Quality
+4.14.3.3.2 State Reporting Through ScadaDevice Control (ReportDataSetState)
+4.14.3.3.3 Connection of DataSources
+4.14.3.4 DataSet Transitions to Offline
+4.14.3.4.1 Setting through Import
+4.14.4 Path Test
+4.14.5 Failovers and Database Updates
+4.14.6 Alarms and Events
+4.14.7 DataSet List Displays
+4.14.7.1 DataSet NIS List
+4.14.7.2 DataSet Abnormal List
+4.14.7.3 DataSet Inhibit List
+4.14.7.4 Test Mode List
+4.14.8 Alternate Configurations
+4.14.8.1 Single-Node / Non-Redundant System
+4.14.8.2 IEC61850 DataSource
+4.14.8.3 ICCP DataSource
+4.14.8.4 ModbusReader DataSource
+4.15 Stability Test
+4.16 Archive Server
+4.16.1 Archive Server Redundancy
+4.16.1.1 Standby machine disconnected from network
+4.16.1.2 Standby machine connected to network
+4.16.1.3 Delete files from online machine and check redundancy
+4.16.2 Archive Server Configuration
+4.16.2.1 Recognizing the old Archive Server Configuration file
+4.16.2.1.1 Old Configuration file with valid values in ‘<StUsr>’ and ‘<StPwd>’ fields
+4.16.2.1.2 Old Configuration file with empty values in ‘<StUsr>’ and ‘<StPwd>’ fields
+4.16.2.2 Generating the New Configuration file of Archive Server Application
+4.16.2.3 Limit Processing in the Configuration file of Archive Server Application
+4.16.2.4 ‘Version’ management in the configuration file of ‘Archive Server’ application
+4.16.2.5 Validation of <StPwd>’ tag in the configuration file of ‘Archive Server’ application
+4.16.2.6 Validation of ‘<StUsr>’ tag in the configuration file of ‘Archive Server’ application
+4.17 Validation of User Privileges
+4.17.1 Write Privilege check
+4.17.1.1 Write Privilege check for putting a measurement point to NIS and restore the measurement point from NIS
+4.17.1.2 Write Privilege check for ‘Remove/Restore’ operation in an RTU
+4.17.1.3 Write Privilege check for putting a measurement point to ‘Inhibited’ mode and restore the measurement point from ‘Inhibited’ mode
+4.17.1.4 Write Privilege check for ‘Inhibit/Uninhibit’ operation in an RTU
+4.17.1.5 Write Privilege check for putting a measurement point to ‘Test’ mode and restore the measurement point from ‘Test’ mode
+4.17.1.6 Write Privilege check for ‘Enable Test mode/Disable Test Mode’ operation in an RTU
+4.17.1.7 Write Privilege check for ‘Mass Inhibit Alarms/Mass Enable Alarms’ operation on a ‘CHANEL’
+4.17.1.8 Write Privilege check for ‘Remove All Paths from Service/Restore All Paths to Service’ operation on a ‘CHANEL’
+4.17.1.9 Write Privilege check for the ‘manual replace’ operation in a measurement point
+4.18 Validation of Force Device Time to Scada Time Property
+4.18.1 Force Device Time to Scada Time in Scada Server
+4.18.1.1 Modeling Force Device Time to Scada Time Property of Device DataSource Objects
+4.18.1.2 Persisting the value of Force Device Time to Scada Time Property of Device DataSource Objects within the ‘.sdb’ file
+4.18.1.3 Persisting the value of Force Device Time to Scada Time Property of Device DataSource Objects within the xml file
+4.18.1.4 Persisting the value of Force Device Time to Scada Time Property of Device DataSource Objects when copy paste the Device DataSources with in the ‘.sdb’ file
+4.18.1.5 Support for opening older version ‘.sdb’ file after the modification for Force Device Time to Scada Time Property of Device DataSource Objects
+4.18.1.6 Usage of the new Force Device Time to Scada Time Property of Device DataSource Objects
+4.18.2 Force Device Time to Scada Time in Scada Builder
+4.18.2.1 Modeling Force Device Time to Scada Time Property of Device DataSources
+4.18.3 Recognizing Force Device Time to Scada Time Property of Device DataSources by Scada Server application from the xml obtained from Scada Builder application
+4.18.4 Recognizing Force Device Time to Scada Time Property of Device DataSources by Scada Builder application from the xml obtained from Scada Server application
+4.18.5 Manual modification of Force Device Time to Scada Time Property value in the xml file obtained from either Scada Server or Scada Builder application
+4.19 Validation of Integrity Rate Monitoring Functionality
+4.2 User Interface Validation
+4.3 Core SCADA Functions
+4.3.1 Auto-Diagnostic and Monitoring
+4.3.10 Tagging
+4.3.11 Device Time Tag Pass-through and Quality
+4.3.11.1 Device TimeTag Pass-through
+4.3.11.2 Device TimeTag Pass-through via xx2smp
+4.3.11.3 Device TimeTag Pass-through via InterSite Data
+4.3.11.4 Bad Time Quality
+4.3.12 Multi-Change Detection Processing
+4.3.13 Database Import and Export
+4.3.13.1 Database Export
+4.3.13.2 Database Import
+4.3.13.3 Database Export – Validation Against XML Schema
+4.3.14 Redundancy
+4.3.14.2 Persistent Storage/Database Replication
+4.3.14.2.1 Periodic Replication
+4.3.14.2.2 Persistent Storage
+4.3.15 Database Synchronization
+4.3.16 Full Database Update
+4.3.16.1 Redundant SMP configuration
+4.3.16.1.1 Database Update
+4.3.16.1.2 Update
+4.3.16.1.3 Update on Top of existing database
+4.3.16.1.4 Update on clean database
+4.3.16.1.5 Failover
+4.3.16.1.6 Rollback
+4.3.16.2 Single-node SMP configuration
+4.3.16.2.1 Database Update
+4.3.16.2.2 Update
+4.3.16.2.3 Update on Top of existing database
+4.3.16.2.4 Update on clean database
+4.3.16.2.5 Failover
+4.3.16.2.6 Rollback
+4.3.17 Message Logs
+4.3.17.1 SCADA Message Log
+4.3.18 Alarms and Events
+4.3.18.1 Generation of Alarms and Events
+4.3.18.2 Inhibit
+4.3.18.3 Generation of events when RTU dataset is removed from service
+4.3.18.4 Generation of events when RTU dataset is restored to service
+4.3.19 Audible Alarming
+4.3.19.1 Modeling Audible Alarming
+4.3.19.2 Audible Generation and Silencing
+4.3.2 Data Acquisition
+4.3.2.1 Periodic Scanning
+4.3.2.2 Exception Reporting
+4.3.2.3 Integrity Scans
+4.3.2.4 Demand Scans
+4.3.2.5 Accumulator Scans
+4.3.2.6 Accumulator Raw-to-Engineering Conversion
+4.3.2.7 Exception Time
+4.3.20 Security
+4.3.20.1 Area of Responsibility
+4.3.20.2 Console Security
+4.3.21 Localization/Locale Testing
+4.3.22 MCD Bit Management
+4.3.23 Scada Threads processing verification
+4.3.23.1 History Thread processing verification
+4.3.23.2 Query Thread processing verification
+4.3.24 Analog Scale Type Validation
+4.3.24.1 Over Range Validation
+4.3.25 Scada GUI verification
+4.3.25.1 Ordering of the items in ‘Scada Server’ tree control
+4.3.3 Controls
+4.3.3.1 Select-Before-Operate Controls
+4.3.3.10 Controls on Disabled Status Points and Analog Points
+4.3.3.11 Controls on Hierarchically Disabled Status Points and Analog Points
+4.3.3.12 ISD Group Control Pass-through
+4.3.3.13 ISD Group Setpoint Pass-through
+4.3.3.2 Direct-Operate Controls
+4.3.3.3 Raise/Lower Controls
+4.3.3.4 Pulse Width Controls
+4.3.3.5 Setpoint Controls
+4.3.3.6 Deadband and Setpoint controls
+4.3.3.7 Sequence of Events (SOE) Commands and Log
+4.3.3.8 Sequence of Events (SOE) Demand Request
+4.3.3.9 Controls on Enabled Status Points and Analog Points
+4.3.4 Communication Equipment Status
+4.3.4.1 Scan Group / RTU Failures
+4.3.4.1.1 Periodic Scan Group Failure
+4.3.4.1.2 RTU Failure With One Scan Group Not In Service
+4.3.4.1.3 Exploratory scans
+4.3.4.2 Periodic Scan Groups Reinstatement
+4.3.5 Line Switching
+4.3.5.1 Alternate Line - single ported RTUs
+4.3.5.2 CFEREADER Failure
+4.3.5.3 Port Failure
+4.3.5.5 Hierarchical NIS (Not in Service)
+4.3.6 DataSet Alarming (Scan Group / RTU Failures)
+4.3.6.1 RTU or Scan Group Failure With All Scan Groups Online
+4.3.6.2 RTU Failure With One Scan Group Not In Service
+4.3.6.3 Alarming RTU on Successful RTU Exploratory Scan
+4.3.6.4 Alarming Single RTU When Scan Groups Are Reinstated
+4.3.6.4.1 Logging Of Failures Of Periodically Scanned Scan Groups
+4.3.6.5 Inhibit RTU Alarm
+4.3.6.6 DataSet Path Switching Behaviors
+4.3.6.6.1 DataSet Path Switch on Un-excepted Path Failure
+4.3.6.6.2 DataSet Path Switch on Excepted Path Failure
+4.3.7 Manual Override
+4.3.8 Local/Remote Interlocking
+4.3.8.1 Modeling
+4.3.8.1.1 Modeling Local/Remote Interlocks on Controls and Setpoints
+4.3.8.1.11 XML Export
+4.3.8.1.13 XML Import
+4.3.8.1.2 Modeling Local/Remote Property of DataSource Objects
+4.3.8.1.3 Modeling Local/Remote Property of User Objects
+4.3.8.1.4 Copy and Paste of DataSources
+4.3.8.1.5 Copy and Paste of Users within a Scada server
+4.3.8.1.6 Copy and Paste of Users between Scada servers
+4.3.8.1.7 Drag and Drop of Users within a Scada while pressing ‘Ctrl’ key
+4.3.8.1.8 Drag and Drop of Users between Scada Servers
+4.3.8.1.9 Drag and Drop of Users between Scada Servers while pressing ‘Alt’ key
+4.3.8.2 Control UI
+4.3.8.3 Control Execution
+4.3.8.3.1 Controls on Measurements without Interlocks
+4.3.8.3.2 Controls on Measurements with Interlocks
+4.3.8.3.3 Controls from DataSources on Controls with Interlocks
+4.3.8.3.4 Controls from Users on Controls with Interlocks
+4.3.8.3.5 Controls through the Automation Interface on Controls with Interlocks
+4.3.8.4 High-Level Localization Test
+4.3.8.4.1 Modeling
+4.3.8.4.2 Control Execution
+4.3.9 Limits
+4.3.9.1 Acceptable Range High Limit Violation
+4.3.9.10 Single-Scan Transition from High Violation to Low
+4.3.9.11 Single-Scan Transition from Low Violation to High
+4.3.9.2 Acceptable Range Low Limit Violation
+4.3.9.3 Acknowledge Analog Point Alarm
+4.3.9.4 Deadband Prevents Alarm Chatter
+4.3.9.5 Return From Limit Violation - Acknowledged
+4.3.9.6 Return From Limit Violation - Unacknowledged
+4.3.9.7 Inhibit an Analog Not in Alarm
+4.3.9.8 Entering Allowed Range Limit Values
+4.3.9.9 Warning of Improper Nesting of Limits
+4.4 Control Responses
+4.4.1 Control Responses to ISD
+4.4.1.1 Control Blocked by Scada server
+4.4.1.1.1 Blocked by Tag
+4.4.1.1.2 Blocked by Local/Remote Interlock
+4.4.1.1.3 Control already pending
+4.4.1.1.4 Measurement Not In Service
+4.4.1.1.5 No Active Communications Path
+4.4.1.1.6 Measurement or Control Not Found
+4.4.1.2 Control Timeout
+4.4.1.3 Control Terminated
+4.4.1.3.1 Device Select Failed
+4.4.1.3.2 Device Execute Failed
+4.4.1.3.3 Device Communications Failure
+4.4.1.3.4 Device Blocked Control
+4.4.1.4 Control Successfully Completed
+4.4.1.5 Group Control Responses
+4.4.1.6 Group Setpoint Responses
+4.4.2 Control Responses to DataSource Applications
+4.4.2.1 Control Blocked by Scada server
+4.4.2.1.1 Blocked by Tag
+4.4.2.1.2 Blocked by Local/Remote Interlock
+4.4.2.1.3 Control already pending
+4.4.2.1.4 Measurement Not In Service
+4.4.2.1.5 No Active Communications Path
+4.4.2.1.6 Measurement or Control Not Found
+4.4.2.2 Control Timeout
+4.4.2.3 Control Terminated
+4.4.2.3.1 Device Select Failed
+4.4.2.3.2 Device Execute Failed
+4.4.2.3.3 Device Communications Failure
+4.4.2.3.4 Device Blocked Control
+4.4.2.4 Control Successfully Completed
+4.4.3 Control Responses to the HMI (WebFG client)
+4.4.3.1 Control Blocked by Scada server
+4.4.3.1.1 Blocked by Tag
+4.4.3.1.2 Blocked by Local/Remote Interlock
+4.4.3.1.3 Control already pending
+4.4.3.1.4 Measurement Not In Service
+4.4.3.1.5 No Active Communications Path
+4.4.3.2 Control Timeout
+4.4.3.3 Control Terminated
+4.4.3.3.1 Device Select Failed
+4.4.3.3.2 Device Execute Failed
+4.4.3.3.3 Device Communications Failure
+4.4.3.3.4 Device Blocked Control
+4.4.3.4 Control Successfully Completed
+4.5 User Interfaces
+4.5.1 Standard WebFG Displays
+4.5.1.1 Equipment Group Tabular Displays
+4.5.1.2 Communications Displays
+4.5.1.3 Modeling Display
+4.5.2 Oneline Displays
+4.5.3 AlarmViewer
+4.5.3.1 Real Time Alarms and Events
+4.5.3.2 Historical Alarms and Events
+4.5.4 SMP Display Linker
+4.5.5 Measurement History Application
+4.5.6 Simulator Application
+4.5.7 Virtual Charts
+4.5.8 Localization/Locale Testing
+4.5.8.1 Scada Server UI
+4.5.8.1.1 Simple Test in English
+4.5.8.1.2 Simple Test in French
+4.5.8.1.3 Simple Test in German
+4.5.8.1.4 Simple Test in Portuguese
+4.5.8.1.5 Full Test in English
+4.6 Process Starter
+4.6.1 General definitions
+4.6.10 Status and Control from Scada (via Pseudo-Points)
+4.6.10.1 Default Configuration
+4.6.10.10 Process State Reporting and Control (using the display) – SECURE
+4.6.10.2 Process Starter Service Settings for Scada
+4.6.10.3 Server State Reporting and Control (using the display)
+4.6.10.4 Watchdog Reporting (using the display)
+4.6.10.5 Process State Reporting and Control (using the display)
+4.6.10.6 Server State Reporting and Control (over ISD)
+4.6.10.7 Watchdog Reporting (over ISD)
+4.6.10.8 Process State Reporting and Control (over ISD)
+4.6.10.9 Server State Reporting and Control (using the display) – SECURE
+4.6.2 Installation
+4.6.2.1 Prerequisites
+4.6.2.2 Service Installation
+4.6.3 Configuration
+4.6.3.1 Prerequisites
+4.6.3.2 Automatic backup
+4.6.3.3 Security configuration
+4.6.3.4 Remoting configuration
+4.6.4 Console
+4.6.4.1 General Prerequisites
+4.6.4.2 Processes configuration
+4.6.4.3 Redundancy configuration
+4.6.4.4 OBSOLETE - Interoperability with the former Process Starter database format
+4.6.4.5 Upload command
+4.6.4.6 Context management
+4.6.4.7 Start Parameters
+4.6.5 Redundancy management
+4.6.5.1 Prerequisites
+4.6.5.2 Single configuration
+4.6.5.3 Connection via a serial port
+4.6.5.4 Connection via a network port
+4.6.5.5 Communication with the different ports
+4.6.5.6 Conflict and mode management
+4.6.6 Processes Management at the Process Starter runtime
+4.6.6.1 Prerequisites
+4.6.6.2 Visible/invisible processes and impersonation
+4.6.6.3 Management of the processes according to the current mode
+4.6.6.4 Management of the life-time processes
+4.6.6.5 Ending the processes
+4.6.6.6 Crash recovery
+4.6.6.7 Wait and delay features.
+4.6.6.8 Enable and disable a process
+4.6.6.9 Scada client processes
+4.6.7 Log Management Configuration
+4.6.7.1 Persisting the Configuration of Log Management
+4.6.7.2 Saving the Configuration of Log Management
+4.6.7.3 Selection of Log Folder in the Configuration of Log Management
+4.6.7.4 Configuration Generation of Log Management when the Existing Configuration Is Invalid
+4.6.7.5 Configuration Generation of Log Management when no Configuration Present Initially
+4.6.8 Logging capacities
+4.6.8.1 System log
+4.6.8.2 Log files
+4.6.9 Advanced Management Tools
+4.6.9.1 Testing the configuration
+4.6.9.2 Testing the new diagnostic tools
+4.6.9.2.1 Testing the cpu monitoring
+4.6.9.2.2 Testing the memory monitoring
+4.6.9.3 Testing the ghost process management
+4.7 AlarmLogger
+4.7.1 Application Startup
+4.7.10 Save Alarms To File
+4.7.11 Application Exit
+4.7.12 On-Demand Print from AlarmLogger UI
+4.7.13 On-Demand Print from WebFG Display
+4.7.14 Printing halted because DataSet out of service
+4.7.2 Use of DataSource
+4.7.3 Wrong DataSource
+4.7.4 Lost SCADA connection
+4.7.5 AlarmLogger Failed Alarms
+4.7.6 Automatic Page Printing
+4.7.7 Incorrect Modeling
+4.7.8 Printing Fails
+4.7.9 Jobs redirected to Secondary Printer
+4.8 CFE Reader
+4.8.1 Communication Statistics
+4.8.2 Communication Error Details
+4.8.3 Viewing Measured Values
+4.8.4 Certified Protocol Implementations
+4.8.4.1 DNP 3
+4.8.4.1.2 Demand Scans
+4.8.4.1.3 Dump Format
+4.9 IEC 870-5-101
+4.9.1 Communication tests (Unbalanced mode)
+4.9.1.1 Establish the connection to the Slave simulator (Request of status of link, Reset of Link, General Interrogation ASDU100)
+4.9.1.2 Continuous polling check
+4.9.1.2.1 Check all RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3, Rtu 4. Check the delay between messages, it must be reasonable short according to the baud rate
+4.9.1.2.2 Check the first RTU from the list:
+4.9.1.2.3 Check the middle RTU from the list:
+4.9.1.2.4 Check the last RTU from the list:
+4.9.1.3 Application confirmation (ACTCON) no-reply timeout (retry not expected)
+4.9.2 ASDU tests – Monitoring Direction
+4.9.2.1 ASDU 1 M_SP_NA_1 "Single point inf."
+4.9.2.11 ASDU 11 M_ME_NB_1 "Measured value, scaled"
+4.9.2.12 ASDU 12 M_ME_TB_1 "Measured value, scaled with the short time tag" - see p.2.30
+4.9.2.13 ASDU 13 M_ME_NC_1 "Measured value, short float point value"
+4.9.2.15 ASDU 15 M_IT_NA_1 "Integrated totals"
+4.9.2.18 ASDU 18 M_EP_TB_1 "Packed start events of protection equipment with the short time tag" - see p.2.39
+4.9.2.19 ASDU 19 M_EP_TC_1 "Packed output circuit information of protection equipment with the short time tag" - see p.2.39
+4.9.2.20 ASDU 20 M_PS_NA_1 "Packed single-point information with status change detection"
+4.9.2.20.6 Send @700,716 Value: 0 with SQ bit set (Statuses: @700-715 go to 0)
+4.9.2.21 ASDU 21 M_ME_ND_1 "Measured value, normalized value without quality descriptor"
+4.9.2.22.1 Test ASDU as described in corresponded chapter for the same ASDU without time tag. Check that full time tag is reported correctly.
+4.9.2.22.2 Send a value with "IV time tag" bit set (---> "Bad Time" quality on SCADA) (Doesn't work for analogs and accumulators at present, see PD27653)
+4.9.2.22.3 Send a value with "IV time tag" bit clear (---> "Good Time" quality on SCADA)
+4.9.2.22.4 Send a value with "SU" bit set (---> no changes quality on SCADA, flag is n/a)
+4.9.2.22.5 Send a value with "SU" bit clear (---> no changes quality on SCADA, flag is n/a)
+4.9.2.23 ASDU 38 M_EP_TD_1 "Event of protection equipment with the full time tag." and ASDU 17 (short time tag variant)
+4.9.2.24 ASDU 39,40 M_EP_TE_1/M_EP_TF_1 "Packed start events/output circuit of protection equipment with the full time tag." and ASDU 18/19 (short time tag variants)
+4.9.2.25 ASDU 70 M_EI_NA_1 "End of initialization"
+4.9.2.25.1 Set the value of PCL360=WAIT_EOI:40 to 40 (second)
+4.9.2.25.10 Measurement Reporting(Un-Balanced Mode Transmission)
+4.9.2.25.2 Set the path not-in-service and then in service.
+4.9.2.25.3 The General Interrogation will be sent in 40 sec.
+4.9.2.25.4 Set the path not-in-service and then in service.
+4.9.2.25.5 Send ASDU70 "End of initialization"
+4.9.2.25.6 The General Interrogation will be sent immediately after reception of ASDU70
+4.9.2.25.7 Reset Link
+4.9.2.25.8 General Interrogation
+4.9.2.25.9 Measurement Reporting(Balanced Mode Transmission)
+4.9.2.26 IEC 870-5-103
+4.9.2.27 IEC 870-5-104
+4.9.2.27.1 Start DT ATC
+4.9.2.27.2 General Interrogation
+4.9.2.27.3 Measurement Reporting(Balanced Mode Transmission)
+4.9.2.28 L&G 8979
+4.9.2.29 Conitel C2020/C2000/C2000P/C300/PERT
+4.9.2.3.4 @5000,5001,5002 "Off" (DPI = "1")
+4.9.2.3.5 @5000,5001,5002 "On" with SQ bit set
+4.9.2.5 ASDU 5 M_ST_NA_1 "Step position inf."
+4.9.2.7 ASDU 7 M_BO_NA_1 "Bitstring of 32 bit."
+4.9.2.7.6 Send @700,732 Value: 0 with SQ bit set (Statuses: @700-731,732-763 go to 0)
+4.9.2.9 ASDU 9 M_ME_NA_1 "Measured value, normalized"
+Check periodic exploring of Rtu1
+Check periodic exploring of Rtu2
+Check periodic exploring of Rtu4
+Rtu1 failed: Check all other RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 2, Rtu 3, Rtu 4
+Rtu1 is restored: Check all RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3, Rtu 4
+Rtu1 is restored: Check all RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3, Rtu 4
+Rtu1 NIS: Check all other RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 2, Rtu 3, Rtu 4
+Rtu2 failed: Check all other RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 3, Rtu 4
+Rtu2 is restored: Check all RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3, Rtu 4
+Rtu2 is restored: Check all RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3, Rtu 4
+Rtu2 NIS: Check all other RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 3, Rtu 4
+Rtu4 failed: Check all other RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3
+Rtu4 is restored: Check all RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3, Rtu 4
+Rtu4 is restored: Check all RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3, Rtu 4
+Rtu4 NIS: Check all other RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3
+Scangrooup Poll of Rtu4 NIS: Check all other RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 2, Rtu 3
+Scangroup Poll of Rtu1 NIS: Check all other RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 2, Rtu 3, Rtu 4
+Scangroup Poll of Rtu2 NIS: Check all other RTUs in continuous scan ( Request of Data Class 2 is sent in series to Rtu 1, Rtu 3, Rtu 4
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+SKIPPED
+TESTLIB

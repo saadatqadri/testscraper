@@ -1,0 +1,409 @@
+<h3 style='mso-list:l369 level3 lfo16'><a name="_Toc383421478"></a><a
+name="_Toc24281869"><span style='mso-bookmark:_Toc383421478'><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3 </span></span><![endif]>Reporting data changes to
+EMP</span></a></h3>
+
+<h4 style='mso-list:l369 level4 lfo16'><a name="_Toc383421479"></a><a
+name="_Toc24281870"><span style='mso-bookmark:_Toc383421479'><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1 </span></span><![endif]>Status Point Processing</span></a></h4>
+
+<h5 style='mso-list:l369 level5 lfo16'><a name="_Toc383421480"></a><a
+name="_Toc24281871"><span style='mso-bookmark:_Toc383421480'><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1.1 </span></span><![endif]>Status Point Alarm</span></a></h5>
+
+<p class=MsoBodyText style='margin-left:0in'>Any status point state can be
+marked to indicate that uncommanded transitions into the state are either
+Alarmable or not Alarmable. Commanded changes are never alarmed. This test
+demonstrates that when the status point undergoes a transition, the point is
+correctly presented.</p>
+
+<p class=MsoBodyText style='margin-left:0in'>Estimated time:<span
+style='mso-tab-count:1'>         </span>30-40 minutes</p>
+
+<h5 style='mso-list:l369 level5 lfo16'><a name="_Toc383421481"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1.2 </span></span><![endif]>Commanded Trip</a></h5>
+
+<p class=MsoBodyText style='text-indent:-.5in'><b style='mso-bidi-font-weight:
+normal'>Setup:</b><span style='mso-tab-count:1'>            </span>Using the
+SCADA device display, choose a status point that is connected to a test
+fixture, that is not auto acknowledged,(Check the auto ack flag on the point
+record) and that has alarm states defined. The Alarmable states for each
+point-type are defined on the SCADA<span style='mso-spacerun:yes'> 
+</span>Tabular Display in the SMP application. The chosen point should be of
+GOOD data quality, it must have usable controls defined, alarms must not be
+inhibited, and the current state of the point should be CLOSED. It must be a
+point in which the RTU can detect momentary changes between scans.</p>
+
+<p class=MsoBodyText style='margin-left:0in'><b style='mso-bidi-font-weight:
+normal'>Proced.:</b> Command a change of state to TRIP</p>
+
+<p class=MsoBodyText style='margin-left:0in'><b style='mso-bidi-font-weight:
+normal'>Results: </b>The point will not be alarmed on transition into the
+state.</p>
+
+<p class=MsoBodyText style='margin-left:0in'><b style='mso-bidi-font-weight:
+normal'>Verif.:</b> Check for the alarm, there should be none. Check that the
+commanded state change has taken place and that the log indicates that the
+breaker has tripped.</p>
+
+<p class=MsoBodyText style='margin-left:0in'><b style='mso-bidi-font-weight:
+normal'>Clean-Up: </b>None. This test is the setup for the test in the
+following section.</p>
+
+<h5 style='mso-list:l369 level5 lfo16'><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1.3 </span></span><![endif]><span
+style='mso-spacerun:yes'> </span><a name="_Toc383421482">Uncommanded Close</a></h5>
+
+<p class=MsoBodyText style='margin-left:0in'><b style='mso-bidi-font-weight:
+normal'>Setup:</b><span style='mso-tab-count:1'>            </span>None. The
+previous test is the setup for this test.</p>
+
+<p class=MsoBodyText style='margin-left:0in'><b style='mso-bidi-font-weight:
+normal'>Proced.:</b> On the test fixture, toggle the test point back to the
+CLOSED state.</p>
+
+<p class=MsoBodyText style='margin-left:0in'><b style='mso-bidi-font-weight:
+normal'>Results: </b>the point will be alarmed on the transition into the
+state.</p>
+
+<p class=MsoBodyText style='margin-left:0in'><b style='mso-bidi-font-weight:
+normal'>Verif.:</b> Check for the alarm. Check that the uncommanded state
+change has taken place and that the log indicates that the breaker has closed.</p>
+
+<p class=MsoBodyText style='margin-left:0in'><b style='mso-bidi-font-weight:
+normal'>Clean-Up: </b>Acknowledge the point. This test is the setup for the
+test in the following section.</p>
+
+<h5 style='mso-list:l369 level5 lfo16'><a name="_Toc383421483"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1.4 </span></span><![endif]>Uncommanded Trip</a></h5>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Setup:<span
+style='mso-tab-count:1'>  </span></span></b><span style='font-family:"Arial","sans-serif";
+mso-bidi-font-family:"Times New Roman"'>None.<span style='mso-spacerun:yes'> 
+</span>The previous test is the setup for this test.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Proced.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+On the Test Fixture, toggle the test point to TRIP.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Results:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+The point will be alarmed on the transition into the state.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Verif.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'>     </span>Check for the alarm.<span
+style='mso-spacerun:yes'>  </span>Check that the uncommanded state change has
+taken place and that the log indicates that the breaker has tripped.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Cleanup:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+Acknowledge the point.<span style='mso-spacerun:yes'>  </span>This test is the
+setup for the test in the following section.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-.5in'><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<h5 style='mso-list:l369 level5 lfo16'><a name="_Toc383421484"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1.5 </span></span><![endif]>Commanded Close</a></h5>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Setup:<span
+style='mso-tab-count:1'>  </span></span></b><span style='font-family:"Arial","sans-serif";
+mso-bidi-font-family:"Times New Roman"'>None.<span style='mso-spacerun:yes'> 
+</span>The previous test is the setup for this test.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Proced.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+Command a change of state to CLOSE.<span style='mso-spacerun:yes'>  </span>This
+can be done from the EMP Substn Tabular display.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Results:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+The point will not be alarmed on the transition into the state.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Verif.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'>     </span>Check for the alarm.<span
+style='mso-spacerun:yes'>  </span>There should be none.<span
+style='mso-spacerun:yes'>  </span>Check that the state change has taken place
+and that the log indicates that the breaker has closed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Cleanup:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+None.<span style='mso-spacerun:yes'>  </span>This test is the setup for the
+test in the following section.<o:p></o:p></span></p>
+
+<h5 style='mso-list:l369 level5 lfo16'><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1.6 </span></span><![endif]><span
+style='mso-spacerun:yes'> </span><a name="_Toc383421485">Uncommanded Reclosure</a></h5>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Setup:<span
+style='mso-tab-count:1'>  </span></span></b><span style='font-family:"Arial","sans-serif";
+mso-bidi-font-family:"Times New Roman"'>None.<span style='mso-spacerun:yes'> 
+</span>The previous test is the setup for this test.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Proced.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+On the Test Fixture, toggle the point to TRIP momentarily, then return it to
+CLOSE.<span style='mso-spacerun:yes'>  </span>This two step transition must be
+accomplished between two scans.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Results:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+The momentary change will be alarmed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Verif.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'>     </span>Check for the alarm.<span
+style='mso-spacerun:yes'>  </span>Check that the state remained CLOSED and that
+a message in the System Activity Log indicates that the breaker has tripped and
+closed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Cleanup:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+Acknowledge the reclosure.<span style='mso-spacerun:yes'>  </span>This test is
+the setup for the test in the following section.<o:p></o:p></span></p>
+
+<h5 style='mso-list:l369 level5 lfo16'><a name="_Toc383421486"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1.7 </span></span><![endif]>Uncommanded failed
+reclosure</a></h5>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Setup:<span
+style='mso-tab-count:1'>  </span></span></b><span style='font-family:"Arial","sans-serif";
+mso-bidi-font-family:"Times New Roman"'>None.<span style='mso-spacerun:yes'> 
+</span>The previous test is the setup for this test.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Proced.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+<o:p></o:p></span></p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal style='color:black;line-height:12.0pt;mso-list:l136 level1 lfo462;
+     tab-stops:list .5in;mso-layout-grid-align:none;text-autospace:none'><span
+     style='font-family:"Helv","sans-serif";mso-bidi-font-family:Helv'>Disable
+     the Scan Group from the RTUSTATE display.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;line-height:12.0pt;mso-list:l136 level1 lfo462;
+     tab-stops:list .5in;mso-layout-grid-align:none;text-autospace:none'><span
+     style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman";
+     color:windowtext'>On the Test Fixture, p</span><span style='font-family:
+     "Helv","sans-serif";mso-bidi-font-family:Helv'>erform a TRIP<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;line-height:12.0pt;mso-list:l136 level1 lfo462;
+     tab-stops:list .5in;mso-layout-grid-align:none;text-autospace:none'><span
+     style='font-family:"Helv","sans-serif";mso-bidi-font-family:Helv'>Perform
+     a CLOSE<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;line-height:12.0pt;mso-list:l136 level1 lfo462;
+     tab-stops:list .5in;mso-layout-grid-align:none;text-autospace:none'><span
+     style='font-family:"Helv","sans-serif";mso-bidi-font-family:Helv'>Perform
+     a TRIP<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;line-height:12.0pt;mso-list:l136 level1 lfo462;
+     tab-stops:list .5in;mso-layout-grid-align:none;text-autospace:none'><span
+     style='font-family:"Helv","sans-serif";mso-bidi-font-family:Helv'>Enable
+     the Scan Group<o:p></o:p></span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Results:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+The point will be alarmed on the transition into the state.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Verif.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'>     </span>Check for the alarms.<span
+style='mso-spacerun:yes'>  </span>Check that the state change has taken place
+and that a single message in the log indicates that the breaker has tripped,
+closed, and tripped (Close Trip Close Trip).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Cleanup:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+Acknowledge the point.<span style='mso-spacerun:yes'>  </span>This test is the
+setup for the test in the following section.<o:p></o:p></span></p>
+
+<h5 style='mso-list:l369 level5 lfo16'><a name="_Toc383421487"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1.8 </span></span><![endif]>Other Uncommanded
+Momentary Changes</a></h5>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Setup:<span
+style='mso-tab-count:1'>  </span></span></b><span style='font-family:"Arial","sans-serif";
+mso-bidi-font-family:"Times New Roman"'>None.<span style='mso-spacerun:yes'> 
+</span>The previous test is the setup for this test.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Proced.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+On the Test Fixture, toggle the point to CLOSE momentarily, then back to
+TRIP.<span style='mso-spacerun:yes'>  </span>All this must be completed between
+two scans.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Results:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+The point will be alarmed on the transition into the state.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Verif.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'>     </span>Check for the alarms.<span
+style='mso-spacerun:yes'>  </span>Check that the state change has taken place
+and that a single message in the log indicates that the breaker has both closed
+and tripped (Trip Close Trip).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;tab-stops:67.5pt 1.0in'><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Cleanup:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+None.<span style='mso-spacerun:yes'>  </span>This test is the setup for the
+test in the following section.<o:p></o:p></span></p>
+
+<h5 style='mso-list:l369 level5 lfo16'><a name="_Toc383421488"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.1.9 </span></span><![endif]>Acknowledge Status
+Point Alarm</a></h5>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif";mso-bidi-font-family:
+"Times New Roman"'>This section demonstrates that alarms on a status point can
+be acknowledged.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:41.05pt;text-indent:-41.05pt'><b
+style='mso-bidi-font-weight:normal'><span style='font-family:"Arial","sans-serif";
+mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Setup:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'>   </span>The test in the previous section is the
+setup for this test.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Proced.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+From the Scada tabular display, acknowledge the alarm on the status point from
+the previous section.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Results:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+The alarm on the point will be acknowledged.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Verif.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+verify that the point's UNACK bit is reset.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Cleanup:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+None.<o:p></o:p></span></p>
+
+<h4 style='mso-list:l369 level4 lfo16'><a name="_Toc383421489"></a><a
+name="_Toc24281872"><span style='mso-bookmark:_Toc383421489'><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.2 </span></span><![endif]>3-State Status Point
+Processing</span></a> </h4>
+
+<p class=MsoBodyText style='margin-left:0in'>Estimated time:<span
+style='mso-tab-count:1'>         </span>10-15 minutes</p>
+
+<h5 style='mso-list:l369 level5 lfo16'><a name="_Toc383421490"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+style='mso-list:Ignore'>3.2.3.2.1 </span></span><![endif]>Uncommanded Operation</a></h5>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><span style='font-family:"Arial","sans-serif";mso-bidi-font-family:
+"Times New Roman"'>This section tests, alarming of an uncommanded operation of
+a three-state device.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Setup:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'>   </span>Using the Scada Tabular display, choose a
+3-state status point that is connected to the test fixture and has alarmable
+and illegal states defined.<span style='mso-spacerun:yes'>  </span>In fact, all
+legal states should be alarmable.<span style='mso-spacerun:yes'>  </span>The
+point should be of GOOD data quality, alarms for the point must not be
+inhibited and its current state should be CLOSED.<span
+style='mso-spacerun:yes'>  </span>Be sure that the control time-out is long
+enough to allow manual flipping of the associated status bits when commanded to
+change.<span style='mso-spacerun:yes'>  </span>Refer to the CONV record in the
+SCADA modeling application to obtain the meaning of the chosen 3-state point's
+four combinations for tests in this section.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Proced.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+On the Test Fixture, toggle the switches for the point to represent the OPEN
+state.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Results:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>
+The point will indicate OPEN and will be alarmed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in'><b style='mso-bidi-font-weight:normal'><span style='font-family:
+"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'>Verif.:</span></b><span
+style='font-family:"Arial","sans-serif";mso-bidi-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'>     </span>Check for the alarm.<span
+style='mso-spacerun:yes'>  </span>Check that the uncommanded state change has
+taken place and that the log indicates that the breaker has tripped.<o:p></o:p></span></p>

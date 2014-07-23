@@ -1,0 +1,99 @@
+3.1.1 Introduction
+3.1.2 User Interface Validation
+3.1.3 Process Starter
+3.2.1 Basic Transfer of Data
+3.2.2 Transfer of Controls
+3.2.3 Reporting data changes to EMP
+3.2.4 Uninitialized Data
+4.3.1 Auto-Diagnostic and Monitoring
+4.3.2 Data Acquisition
+4.3.3 Controls
+4.3.4 Communication Equipment Status
+4.3.5 Line Switching
+4.3.6 DataSet Alarming (Scan Group / RTU Failures)
+4.3.7 Manual Override
+4.3.8 Local/Remote Interlocking
+4.3.9 Limits
+4.3.10 Tagging
+4.3.11 Device Time Tag Pass-through and Quality
+4.3.12 Multi-Change Detection Processing
+4.3.13 Database Import and Export
+4.3.14 Redundancy
+4.3.15 Database Synchronization
+4.3.16 Full Database Update
+4.3.17 Message Logs
+4.3.18 Alarms and Events
+4.3.19 Audible Alarming
+4.3.20 Security
+4.3.21 Localization/Locale Testing
+4.3.22 MCD Bit Management
+4.3.23 Scada Threads processing verification
+4.3.24 Analog Scale Type Validation
+4.3.25 Scada GUI verification
+4.4.1 Control Responses to ISD
+4.4.2 Control Responses to DataSource Applications
+4.4.3 Control Responses to the HMI (WebFG client)
+4.5.1 Standard WebFG Displays
+4.5.2 Oneline Displays
+4.5.3 AlarmViewer
+4.5.4 SMP Display Linker
+4.5.5 Measurement History Application
+4.5.6 Simulator Application
+4.5.7 Virtual Charts
+4.5.8 Localization/Locale Testing
+4.6.1 General definitions
+4.6.2 Installation
+4.6.3 Configuration
+4.6.4 Console
+4.6.5 Redundancy management
+4.6.6 Processes Management at the Process Starter runtime
+4.6.7 Log Management Configuration
+4.6.8 Logging capacities
+4.6.9 Advanced Management Tools
+4.6.10 Status and Control from Scada (via Pseudo-Points)
+4.7.1 Application Startup
+4.7.2 Use of DataSource
+4.7.3 Wrong DataSource
+4.7.4 Lost SCADA connection
+4.7.5 AlarmLogger Failed Alarms
+4.7.6 Automatic Page Printing
+4.7.7 Incorrect Modeling
+4.7.8 Printing Fails
+4.7.9 Jobs redirected to Secondary Printer
+4.7.10 Save Alarms To File
+4.7.11 Application Exit
+4.7.12 On-Demand Print from AlarmLogger UI
+4.7.13 On-Demand Print from WebFG Display
+4.7.14 Printing halted because DataSet out of service
+4.8.1 Communication Statistics
+4.8.2 Communication Error Details
+4.8.3 Viewing Measured Values
+4.8.4 Certified Protocol Implementations
+4.9.1 Communication tests (Unbalanced mode)
+4.9.2 ASDU tests – Monitoring Direction
+4.11.1 ModbusReader With DataSet Support
+4.13.1 ISD
+4.13.2 ADO2SMP
+4.13.3 DDEML2SMP
+4.13.4 MB2SMP
+4.13.5 OPC DA Server
+4.13.6 PI2SMP
+4.13.7 SMP/ICCP
+4.13.8 XX2SMP
+4.13.9 61850 Interface Testing
+4.14.1 Modeling
+4.14.2 State Measurement Management
+4.14.3 DataSet State Changes and Path Switching
+4.14.4 Path Test
+4.14.5 Failovers and Database Updates
+4.14.6 Alarms and Events
+4.14.7 DataSet List Displays
+4.14.8 Alternate Configurations
+4.16.1 Archive Server Redundancy
+4.16.2 Archive Server Configuration
+4.17.1 Write Privilege check
+4.18.1 Force Device Time to Scada Time in Scada Server
+4.18.2 Force Device Time to Scada Time in Scada Builder
+4.18.3 Recognizing Force Device Time to Scada Time Property of Device DataSources by Scada Server application from the xml obtained from Scada Builder application
+4.18.4 Recognizing Force Device Time to Scada Time Property of Device DataSources by Scada Builder application from the xml obtained from Scada Server application
+4.18.5 Manual modification of Force Device Time to Scada Time Property value in the xml file obtained from either Scada Server or Scada Builder application

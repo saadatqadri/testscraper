@@ -1,0 +1,64 @@
+from bs4 import BeautifulSoup
+import urllib2
+
+url = "///home/saadat/apps/testscraper/SCADA Rehearsal Test Case.htm"
+#page = urllib2.urlopen(url)
+
+soup = BeautifulSoup(open(url))
+
+#print soup.prettify()
+
+#print soup.title.string
+
+#test_title = soup.h2.a.next_sibling.get_text()
+#print(test_title)
+#test_desc = soup.p
+
+alltext = soup.get_text()
+
+#print(alltext)
+
+f = open('screhtest.txt', 'w')
+f.write(alltext.encode('utf-8'))
+f.close()
+
+import re
+
+re_obj1 = re.compile(r'SCADA')
+
+for match in re_obj1.findall(alltext.):
+	print match
+	
+
+test_descs = re.findall(r'This test checks|This test exercises', alltext)
+
+for desc in test_descs:
+	print desc
+
+print(len(test_descs))
+#print(soup.prettify())
+
+#tag = soup.h2
+
+#print tag.name
+
+#header2 = soup.find_all('span', attrs= {'lang':'EN-US'}),
+
+#print header2
+
+#for eachh in header2:
+#	print(type(eachh))
+#	print(eachh.string)	
+	#print(eachh.prettify())		
+	#print(eachh.a.contents)
+
+
+#url = "http://www.utexas.edu/world/univ/alpha"
+#page = urllib2.urlopen(url)
+#soup = BeautifulSoup(page.read())
+
+#universities = soup.findAll('a', {'class':'institution'})
+
+#for eachuniversity in universities:
+#	print eachuniversity['href']+","+eachuniversity.string
+	 

@@ -1,0 +1,104 @@
+3.2.3.1.1 Status Point Alarm
+
+3.2.3.1.2 Commanded Trip
+
+3.2.3.1.3 Uncommanded Close
+
+3.2.3.1.4 Uncommanded Trip
+
+3.2.3.1.5 Commanded Close
+
+3.2.3.1.6 Uncommanded Reclosure
+
+3.2.3.1.7 Uncommanded failed reclosure
+
+3.2.3.1.8 Other Uncommanded Momentary Changes
+
+3.2.3.1.9 Acknowledge Status Point Alarm
+
+3.2.3.2.1 Uncommanded Operation
+
+3.2.3.2.2 Commanded Operation
+
+4.3.4.1.1 Periodic Scan Group Failure
+
+4.3.4.1.2 RTU Failure With One Scan Group Not In Service
+
+4.3.4.1.3 Exploratory scans
+
+4.3.6.4.1 Logging Of Failures Of Periodically Scanned Scan Groups
+
+4.3.6.6.1 DataSet Path Switch on Un-excepted Path Failure
+
+4.3.6.6.2 DataSet Path Switch on Excepted Path Failure
+
+4.3.8.1.11 XML Export
+
+4.3.8.1.13 XML Import
+
+4.3.14.2.1 Periodic Replication
+
+4.3.14.2.2 Persistent Storage
+
+4.3.16.1.1 Database Update
+
+4.3.16.1.2 Update
+
+4.3.16.1.3 Update on Top of existing database
+
+4.3.16.1.4 Update on clean database
+
+4.3.16.1.5 Failover
+
+4.3.16.1.6 Rollback
+
+4.3.16.2.1 Database Update
+
+4.3.16.2.2 Update
+
+4.3.16.2.3 Update on Top of existing database
+
+4.3.16.2.4 Update on clean database
+
+4.3.16.2.5 Failover
+
+4.3.16.2.6 Rollback
+
+4.4.1.1.3 Control already pending
+
+4.4.1.3.1 Device Select Failed
+
+4.4.1.3.2 Device Execute Failed
+
+4.4.1.3.3 Device Communications Failure
+
+4.4.1.3.4 Device Blocked Control
+
+4.6.6.7 Wait and delay features.
+
+4.6.9.2.1 Testing the cpu monitoring
+
+4.6.9.2.2 Testing the memory monitoring
+
+4.8.4.1.2 Demand Scans
+
+4.14.3.1.1 Removal/Restoral using The CFE Communications Status WebFG display
+
+4.14.3.1.2 Removal/Restoral using RTUState
+
+4.14.3.1.3 DataItems Linked to State Measurements
+
+4.14.3.2.1 Exceeding Maximum Error Counts
+
+4.14.3.2.2 State Reporting Through ScadaDevice Control (ReportDataSetState)
+
+4.14.3.2.3 Disconnection of DataSources
+
+4.14.3.2.4 Continual Failures
+
+4.14.3.3.1 Loading DataItem values of Good Quality
+
+4.14.3.3.2 State Reporting Through ScadaDevice Control (ReportDataSetState)
+
+4.14.3.3.3 Connection of DataSources
+
